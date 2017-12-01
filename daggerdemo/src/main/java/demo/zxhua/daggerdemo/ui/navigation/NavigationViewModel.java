@@ -1,20 +1,18 @@
 package demo.zxhua.daggerdemo.ui.navigation;
 
 import android.app.Application;
+import android.arch.lifecycle.ViewModel;
 
 import javax.inject.Inject;
-
-import demo.zxhua.daggerdemo.core.dagger.viewmodelmodule.DaggerBaseViewModel;
 
 /**
  * Created by Zxhua on 2017/11/27 0027.
  */
 
-public class NavigationViewModel extends DaggerBaseViewModel {
+public class NavigationViewModel extends ViewModel {
 
     @Inject
-    public NavigationViewModel(Application application) {
-        super(application);
+    public NavigationViewModel() {
     }
 
 

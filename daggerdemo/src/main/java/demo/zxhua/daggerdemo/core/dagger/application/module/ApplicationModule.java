@@ -18,13 +18,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 /**
  * Created by Zxhua on 2017/9/7 0007.
  */
-@Module()
-public final class ApplicationModule  {
-    private final DaggerApplication daggerApplication;
-
-    public ApplicationModule(final DaggerApplication daggerApplication) {
-        this.daggerApplication = daggerApplication;
-    }
+@Module
+public class ApplicationModule {
 
     @Provides
     @Singleton
@@ -35,39 +30,6 @@ public final class ApplicationModule  {
                 .addCallAdapterFactory(new LiveDataCallAdapterFactory())
                 .build()
                 .create(ApiService.class);
-    }
-
-    @Provides
-    @Singleton
-    Application provideApplication() {
-        return daggerApplication;
-    }
-
-    @Provides
-    @Singleton
-    @ForApplication
-    Context provideContext() {
-        return daggerApplication;
-    }
-
-    @Provides
-    @Singleton
-    Resources provideResources() {
-        return provideApplication().getResources();
-    }
-
-
-
-    public interface Exposes extends VMModule.Exposes {
-
-        Application provideApplication();
-
-        @ForApplication
-        Context provideContext();
-
-        Resources provideResources();
-
-        ApiService provideApiService();
     }
 
 }

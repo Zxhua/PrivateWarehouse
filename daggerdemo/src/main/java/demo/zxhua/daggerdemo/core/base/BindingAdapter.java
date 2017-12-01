@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-import demo.zxhua.daggerdemo.BR;
 
 /**
  * Created by Zxhua on 2017/11/30 0030.
@@ -33,7 +32,6 @@ public class BindingAdapter extends RecyclerView.Adapter<BindingAdapter.BindingV
 
     @Override
     public void onBindViewHolder(BindingViewHolder holder, int position) {
-        holder.bindData(items.get(position));
     }
 
     @Override
@@ -55,8 +53,6 @@ public class BindingAdapter extends RecyclerView.Adapter<BindingAdapter.BindingV
         }
 
 
-        void bindData(BindingAdapterItem item) {
-            dataBinding.setVariable(BR.item, item);
-        }
+
     }
 }

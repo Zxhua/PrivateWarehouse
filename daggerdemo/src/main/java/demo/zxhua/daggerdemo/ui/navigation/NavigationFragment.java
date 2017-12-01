@@ -11,7 +11,6 @@ import javax.inject.Inject;
 
 import demo.zxhua.daggerdemo.R;
 import demo.zxhua.daggerdemo.core.base.BaseFragment;
-import demo.zxhua.daggerdemo.core.dagger.fragment.FragmentComonpent;
 import demo.zxhua.daggerdemo.databinding.FragNavigationBinding;
 import demo.zxhua.daggerdemo.ui.test.TestFragment;
 import demo.zxhua.daggerdemo.utils.ActivityUtils;
@@ -21,13 +20,8 @@ import demo.zxhua.daggerdemo.utils.ActivityUtils;
  */
 
 public class NavigationFragment extends BaseFragment<FragNavigationBinding, NavigationViewModel> {
-    @Inject
-    public ActivityUtils activityUtils;
 
-    @Override
-    protected void inject(FragmentComonpent fragmentComonpent) {
-        fragmentComonpent.inject(this);
-    }
+
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {

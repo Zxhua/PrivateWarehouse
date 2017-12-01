@@ -2,18 +2,14 @@ package demo.zxhua.daggerdemo.ui.tools;
 
 import demo.zxhua.daggerdemo.R;
 import demo.zxhua.daggerdemo.core.base.BaseFragment;
-import demo.zxhua.daggerdemo.core.dagger.fragment.FragmentComonpent;
+import demo.zxhua.daggerdemo.databinding.ItemToolsBinding;
 
 /**
  * Created by Zxhua on 2017/11/30 0030.
  */
 
-public class ToolsFragment extends BaseFragment {
+public class ToolsFragment extends BaseFragment<ItemToolsBinding,ToolsViewModel> {
 
-    @Override
-    protected void inject(FragmentComonpent fragmentComonpent) {
-
-    }
 
     @Override
     protected int layoutId() {

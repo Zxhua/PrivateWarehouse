@@ -34,12 +34,4 @@ public class UtilsModule {
     ImageLoaderUtils provideImageLoaderUtils() {
         return new ImageLoaderUtilsImpl();
     }
-
-    public interface Exposes {
-        ActivityUtils provideActivityUtils();
-
-        TransformUtils provideTransformUtils();
-
-        ImageLoaderUtils provideImageLoaderUtils();
-    }
 }

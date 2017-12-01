@@ -3,7 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DemoWarehouse.iml" filepath="$PROJECT_DIR$/DemoWarehouse.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PrivateWarehouse.iml" filepath="$PROJECT_DIR$/PrivateWarehouse.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/daggerdemo/daggerdemo.iml" filepath="$PROJECT_DIR$/daggerdemo/daggerdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/daggerdemo/daggerdemo.iml" filepath="$PROJECT_DIR$/daggerdemo/daggerdemo.iml" />
     </modules>
   </component>
