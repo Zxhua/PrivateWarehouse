@@ -1,4 +1,4 @@
-package demo.zxhua.daggerdemo.core.dagger.viewmodelmodule;
+package demo.zxhua.daggerdemo.core.di.module.viewmodelmodule;
 
 /**
  * Created by Zxhua on 2017/9/11 0011.

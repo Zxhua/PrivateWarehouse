@@ -1,4 +1,4 @@
-package demo.zxhua.daggerdemo.core.dagger.application;
+package demo.zxhua.daggerdemo.core.di.scope;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

@@ -1,4 +1,4 @@
-package demo.zxhua.daggerdemo.core.dagger.application.module;
+package demo.zxhua.daggerdemo.core.di.module;
 
 import javax.inject.Singleton;
 
@@ -19,27 +19,20 @@ import demo.zxhua.daggerdemo.utils.TransformUtilsImpl;
 public class UtilsModule {
     @Provides
     @Singleton
-    ActivityUtils provideActivityUtils() {
+    static ActivityUtils provideActivityUtils() {
         return new ActivityUtilsImpl();
     }
 
     @Provides
     @Singleton
-    TransformUtils provideTransformUtils() {
+    static TransformUtils provideTransformUtils() {
         return new TransformUtilsImpl();
     }
 
     @Provides
     @Singleton
-    ImageLoaderUtils provideImageLoaderUtils() {
+    static ImageLoaderUtils provideImageLoaderUtils() {
         return new ImageLoaderUtilsImpl();
     }
 
-    public interface Exposes {
-        ActivityUtils provideActivityUtils();
-
-        TransformUtils provideTransformUtils();
-
-        ImageLoaderUtils provideImageLoaderUtils();
-    }
 }

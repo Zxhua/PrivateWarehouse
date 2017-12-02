@@ -10,7 +10,6 @@ import javax.inject.Inject;
 
 import demo.zxhua.daggerdemo.R;
 import demo.zxhua.daggerdemo.core.base.BaseFragment;
-import demo.zxhua.daggerdemo.core.dagger.fragment.FragmentComonpent;
 import demo.zxhua.daggerdemo.databinding.FragTestBinding;
 
 /**
@@ -45,10 +44,5 @@ public class TestFragment extends BaseFragment<FragTestBinding, TestViewModel> {
         super.onViewCreated(view, savedInstanceState);
         mViewModel = ViewModelProviders.of(this, viewModelFactory).get(TestViewModel.class);
         mViewModel.fragName.set(fragName);
-    }
-
-    @Override
-    protected void inject(FragmentComonpent fragmentComonpent) {
-        fragmentComonpent.inject(this);
     }
 }

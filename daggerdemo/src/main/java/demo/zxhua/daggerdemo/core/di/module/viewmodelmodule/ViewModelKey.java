@@ -1,4 +1,4 @@
-package demo.zxhua.daggerdemo.core.dagger.viewmodelmodule;
+package demo.zxhua.daggerdemo.core.di.module.viewmodelmodule;
 
 import android.arch.lifecycle.ViewModel;
 

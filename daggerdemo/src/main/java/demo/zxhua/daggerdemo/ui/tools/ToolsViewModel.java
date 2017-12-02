@@ -5,7 +5,7 @@ import android.arch.lifecycle.LiveData;
 
 import java.util.List;
 
-import demo.zxhua.daggerdemo.core.dagger.viewmodelmodule.DaggerBaseViewModel;
+import demo.zxhua.daggerdemo.core.di.module.viewmodelmodule.DaggerBaseViewModel;
 import demo.zxhua.daggerdemo.vo.ToolsItem;
 
 /**

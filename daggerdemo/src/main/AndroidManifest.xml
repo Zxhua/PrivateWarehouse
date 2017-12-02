@@ -3,7 +3,7 @@
     package="demo.zxhua.daggerdemo">
 
     <application
-        android:name=".core.dagger.application.DaggerApplication"
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"

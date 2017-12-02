@@ -1,4 +1,4 @@
-package demo.zxhua.daggerdemo.core.dagger.application.module;
+package demo.zxhua.daggerdemo.core.di.module;
 
 import android.app.Application;
 import android.content.Context;
@@ -8,10 +8,10 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import demo.zxhua.daggerdemo.App;
 import demo.zxhua.daggerdemo.core.api.ApiService;
 import demo.zxhua.daggerdemo.core.api.calladapter.LiveDataCallAdapterFactory;
-import demo.zxhua.daggerdemo.core.dagger.application.DaggerApplication;
-import demo.zxhua.daggerdemo.core.dagger.application.ForApplication;
+import demo.zxhua.daggerdemo.core.di.scope.ForApplication;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -20,15 +20,15 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 @Module()
 public final class ApplicationModule  {
-    private final DaggerApplication daggerApplication;
+    private final App app;
 
-    public ApplicationModule(final DaggerApplication daggerApplication) {
-        this.daggerApplication = daggerApplication;
+    public ApplicationModule(final App app) {
+        this.app = app;
     }
 
     @Provides
     @Singleton
-    ApiService provideApiService() {
+    static ApiService provideApiService() {
         return new Retrofit.Builder()
                 .baseUrl("")
                 .addConverterFactory(GsonConverterFactory.create())
@@ -40,34 +40,20 @@ public final class ApplicationModule  {
     @Provides
     @Singleton
     Application provideApplication() {
-        return daggerApplication;
+        return app;
     }
 
     @Provides
     @Singleton
     @ForApplication
     Context provideContext() {
-        return daggerApplication;
+        return app;
     }
 
     @Provides
     @Singleton
     Resources provideResources() {
         return provideApplication().getResources();
-    }
-
-
-
-    public interface Exposes extends VMModule.Exposes {
-
-        Application provideApplication();
-
-        @ForApplication
-        Context provideContext();
-
-        Resources provideResources();
-
-        ApiService provideApiService();
     }
 
 }

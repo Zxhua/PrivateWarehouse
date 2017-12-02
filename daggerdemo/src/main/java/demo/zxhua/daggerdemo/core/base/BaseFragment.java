@@ -1,5 +1,7 @@
 package demo.zxhua.daggerdemo.core.base;
 
+import android.arch.lifecycle.LifecycleFragment;
+import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.os.Bundle;
@@ -8,14 +10,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import demo.zxhua.daggerdemo.core.dagger.fragment.DaggerFragment;
-import demo.zxhua.daggerdemo.core.dagger.viewmodelmodule.BaseViewModel;
+import dagger.android.support.AndroidSupportInjection;
+import demo.zxhua.daggerdemo.core.di.module.viewmodelmodule.BaseViewModel;
 
 /**
  * Created by Zxhua on 2017/9/11 0011.
  */
 
-public abstract class BaseFragment<B extends ViewDataBinding,VM extends BaseViewModel> extends DaggerFragment {
+public abstract class BaseFragment<B extends ViewDataBinding, VM extends BaseViewModel> extends LifecycleFragment {
 
     protected VM mViewModel;
 
@@ -23,11 +25,17 @@ public abstract class BaseFragment<B extends ViewDataBinding,VM extends BaseView
 
     protected B mBinding;
 
+    @Override
+    public void onAttach(Context context) {
+        AndroidSupportInjection.inject(this);
+        super.onAttach(context);
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        mBinding=DataBindingUtil.inflate(inflater,layoutId(),container,false);
-        if (mBinding == null){
+        mBinding = DataBindingUtil.inflate(inflater, layoutId(), container, false);
+        if (mBinding == null) {
             throw new IllegalArgumentException("databind can't be null");
         }
 

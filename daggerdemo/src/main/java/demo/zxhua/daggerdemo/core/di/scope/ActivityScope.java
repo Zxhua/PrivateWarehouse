@@ -1,4 +1,4 @@
-package demo.zxhua.daggerdemo.core.dagger.activity;
+package demo.zxhua.daggerdemo.core.di.scope;
 
 import javax.inject.Scope;
 

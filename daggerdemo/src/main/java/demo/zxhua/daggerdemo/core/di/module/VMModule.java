@@ -1,4 +1,4 @@
-package demo.zxhua.daggerdemo.core.dagger.application.module;
+package demo.zxhua.daggerdemo.core.di.module;
 
 import android.app.Application;
 import android.arch.lifecycle.ViewModel;
@@ -14,8 +14,8 @@ import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
 import dagger.multibindings.IntoMap;
-import demo.zxhua.daggerdemo.core.dagger.viewmodelmodule.ViewModelFactory;
-import demo.zxhua.daggerdemo.core.dagger.viewmodelmodule.ViewModelKey;
+import demo.zxhua.daggerdemo.core.di.module.viewmodelmodule.ViewModelFactory;
+import demo.zxhua.daggerdemo.core.di.module.viewmodelmodule.ViewModelKey;
 import demo.zxhua.daggerdemo.ui.test.TestViewModel;
 
 /**
