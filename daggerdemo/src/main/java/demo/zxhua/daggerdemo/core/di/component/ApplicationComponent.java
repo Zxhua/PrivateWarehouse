@@ -1,5 +1,7 @@
 package demo.zxhua.daggerdemo.core.di.component;
 
+import javax.inject.Singleton;
+
 import dagger.Component;
 import dagger.android.AndroidInjectionModule;
 import dagger.android.AndroidInjector;
@@ -13,6 +15,7 @@ import demo.zxhua.daggerdemo.core.di.module.BuildersModule;
 /**
  * Created by Zxhua on 2017/12/2 0002.
  */
+@Singleton
 @Component(modules = {
         VMModule.class,
         UtilsModule.class,
@@ -22,8 +25,5 @@ import demo.zxhua.daggerdemo.core.di.module.BuildersModule;
         AndroidSupportInjectionModule.class
 })
 public interface ApplicationComponent extends AndroidInjector<App> {
-    @Component.Builder
-    abstract class Builder extends AndroidInjector.Builder<App> {
 
-    }
 }

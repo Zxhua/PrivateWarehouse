@@ -18,8 +18,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 /**
  * Created by Zxhua on 2017/9/7 0007.
  */
-@Module()
-public final class ApplicationModule  {
+@Module
+public class ApplicationModule {
     private final App app;
 
     public ApplicationModule(final App app) {

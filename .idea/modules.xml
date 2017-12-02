@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DemoWarehouse.iml" filepath="$PROJECT_DIR$/DemoWarehouse.iml" />
+      <module fileurl="file://D:\gome\zxhua\android-google-architecture\DemoWarehouse\PrivateWarehouse.iml" filepath="D:\gome\zxhua\android-google-architecture\DemoWarehouse\PrivateWarehouse.iml" />
+      <module fileurl="file://D:\gome\zxhua\android-google-architecture\DemoWarehouse\app\app.iml" filepath="D:\gome\zxhua\android-google-architecture\DemoWarehouse\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/daggerdemo/daggerdemo.iml" filepath="$PROJECT_DIR$/daggerdemo/daggerdemo.iml" />
     </modules>
   </component>

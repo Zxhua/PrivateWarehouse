@@ -19,19 +19,19 @@ import demo.zxhua.daggerdemo.utils.TransformUtilsImpl;
 public class UtilsModule {
     @Provides
     @Singleton
-    static ActivityUtils provideActivityUtils() {
+    ActivityUtils provideActivityUtils() {
         return new ActivityUtilsImpl();
     }
 
     @Provides
     @Singleton
-    static TransformUtils provideTransformUtils() {
+    TransformUtils provideTransformUtils() {
         return new TransformUtilsImpl();
     }
 
     @Provides
     @Singleton
-    static ImageLoaderUtils provideImageLoaderUtils() {
+    ImageLoaderUtils provideImageLoaderUtils() {
         return new ImageLoaderUtilsImpl();
     }
 
