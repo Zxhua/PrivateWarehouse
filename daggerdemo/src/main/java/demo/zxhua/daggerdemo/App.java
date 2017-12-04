@@ -18,12 +18,17 @@ public class App extends DaggerApplication implements HasActivityInjector {
     DispatchingAndroidInjector<Activity> activityInjector;
 
     @Override
-    protected AndroidInjector<? extends DaggerApplication> applicationInjector() {
-        return null;
+    public void onCreate() {
+        super.onCreate();
     }
 
     @Override
     public DispatchingAndroidInjector<Activity> activityInjector() {
         return activityInjector;
+    }
+
+    @Override
+    protected AndroidInjector<? extends DaggerApplication> applicationInjector() {
+        return null;
     }
 }

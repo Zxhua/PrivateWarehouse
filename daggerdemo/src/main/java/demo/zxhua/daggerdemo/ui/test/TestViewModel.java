@@ -1,6 +1,5 @@
 package demo.zxhua.daggerdemo.ui.test;
 
-import android.app.Application;
 import android.databinding.ObservableField;
 
 import demo.zxhua.daggerdemo.core.di.module.viewmodelmodule.DaggerBaseViewModel;
@@ -11,12 +10,12 @@ import demo.zxhua.daggerdemo.core.di.module.viewmodelmodule.DaggerBaseViewModel;
 
 public class TestViewModel extends DaggerBaseViewModel {
 
-    public ObservableField<String> fragName  = new ObservableField<String>();
-    public TestViewModel(Application application) {
-        super(application);
+    public ObservableField<String> fragName = new ObservableField<String>();
+
+    public TestViewModel() {
     }
 
-    public void setFragName(String fragName){
+    public void setFragName(String fragName) {
         this.fragName.set(fragName);
     }
 

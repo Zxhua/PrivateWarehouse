@@ -26,14 +26,14 @@ public abstract class BaseActivity extends DaggerAppCompatActivity implements Ha
     @Inject
     ActivityUtils activityUtils;
 
-    @Inject
-    FragmentManager fragmentManager;
+    protected FragmentManager fragmentManager;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         AndroidInjection.inject(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        fragmentManager = getSupportFragmentManager();
     }
 
     @Override

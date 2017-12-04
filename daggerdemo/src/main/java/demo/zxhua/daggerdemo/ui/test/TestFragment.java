@@ -20,7 +20,7 @@ import demo.zxhua.daggerdemo.databinding.FragTestBinding;
 public class TestFragment extends BaseFragment<FragTestBinding, TestViewModel> {
 
     private static TestFragment INSTANCE;
-    private static String fragName;
+    private String fragName;
 
     @Inject
     public ViewModelProvider.Factory viewModelFactory;
@@ -29,9 +29,11 @@ public class TestFragment extends BaseFragment<FragTestBinding, TestViewModel> {
     }
 
     public static TestFragment newTestFragment(String fragmentName) {
-        INSTANCE = new TestFragment();
-        fragName = fragmentName;
-        return INSTANCE;
+        TestFragment fragment = new TestFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString("name", fragmentName);
+        fragment.setArguments(bundle);
+        return fragment;
     }
 
     @Override
@@ -43,6 +45,7 @@ public class TestFragment extends BaseFragment<FragTestBinding, TestViewModel> {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         mViewModel = ViewModelProviders.of(this, viewModelFactory).get(TestViewModel.class);
+        fragName = getArguments().getString("name");
         mViewModel.fragName.set(fragName);
     }
 }

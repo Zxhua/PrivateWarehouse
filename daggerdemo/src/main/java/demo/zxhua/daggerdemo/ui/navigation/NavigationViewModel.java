@@ -1,9 +1,5 @@
 package demo.zxhua.daggerdemo.ui.navigation;
 
-import android.app.Application;
-
-import javax.inject.Inject;
-
 import demo.zxhua.daggerdemo.core.di.module.viewmodelmodule.DaggerBaseViewModel;
 
 /**
@@ -11,12 +7,7 @@ import demo.zxhua.daggerdemo.core.di.module.viewmodelmodule.DaggerBaseViewModel;
  */
 
 public class NavigationViewModel extends DaggerBaseViewModel {
+    public NavigationViewModel(){
 
-    @Inject
-    public NavigationViewModel(Application application) {
-        super(application);
     }
-
-
-
 }

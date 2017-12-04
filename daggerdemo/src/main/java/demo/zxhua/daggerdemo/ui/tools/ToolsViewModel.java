@@ -1,6 +1,5 @@
 package demo.zxhua.daggerdemo.ui.tools;
 
-import android.app.Application;
 import android.arch.lifecycle.LiveData;
 
 import java.util.List;
@@ -15,10 +14,7 @@ import demo.zxhua.daggerdemo.vo.ToolsItem;
 public class ToolsViewModel extends DaggerBaseViewModel {
     public LiveData<List<ToolsItem>> items;
 
-    public ToolsViewModel(Application application) {
-        super(application);
-
-
+    public ToolsViewModel() {
     }
 
 }
