@@ -1,6 +1,7 @@
 package demo.zxhua.daggerdemo.core.base;
 
 import android.arch.lifecycle.LifecycleFragment;
+import android.arch.lifecycle.ViewModel;
 import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
@@ -11,13 +12,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import dagger.android.support.AndroidSupportInjection;
-import demo.zxhua.daggerdemo.core.di.module.viewmodelmodule.BaseViewModel;
 
 /**
  * Created by Zxhua on 2017/9/11 0011.
  */
 
-public abstract class BaseFragment<B extends ViewDataBinding, VM extends BaseViewModel> extends LifecycleFragment {
+public abstract class BaseFragment<B extends ViewDataBinding, VM extends ViewModel> extends LifecycleFragment {
 
     protected VM mViewModel;
 

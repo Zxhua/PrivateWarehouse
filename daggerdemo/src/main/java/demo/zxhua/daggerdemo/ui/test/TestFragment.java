@@ -19,7 +19,6 @@ import demo.zxhua.daggerdemo.databinding.FragTestBinding;
 
 public class TestFragment extends BaseFragment<FragTestBinding, TestViewModel> {
 
-    private static TestFragment INSTANCE;
     private String fragName;
 
     @Inject

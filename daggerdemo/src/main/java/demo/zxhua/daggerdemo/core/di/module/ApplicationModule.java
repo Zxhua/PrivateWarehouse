@@ -12,7 +12,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 /**
  * Created by Zxhua on 2017/9/7 0007.
  */
-@Module
+@Module( includes = VMModule.class)
 public class ApplicationModule {
 
     @Provides

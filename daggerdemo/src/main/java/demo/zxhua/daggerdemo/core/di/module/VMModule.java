@@ -1,10 +1,7 @@
 package demo.zxhua.daggerdemo.core.di.module;
 
-import android.app.Application;
 import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProvider;
-
-import javax.inject.Inject;
 
 import dagger.Binds;
 import dagger.Module;
@@ -20,9 +17,6 @@ import demo.zxhua.daggerdemo.ui.tools.ToolsViewModel;
  */
 @Module
 public abstract class VMModule {
-
-    @Inject
-    public Application application;
 
     @Binds
     @IntoMap
