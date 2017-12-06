@@ -5,6 +5,9 @@
 
     <data>
 
+        <variable
+            name="viewmodel"
+            type="demo.zxhua.daggerdemo.ui.tools.ToolsViewModel" />
     </data>
 
     <android.support.constraint.ConstraintLayout
@@ -15,7 +18,7 @@
             android:id="@+id/rlvTools"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layoutManager="GridLayoutManager"
-            tools:listitem="@layout/item_tools" />
+            app:layoutManager="LinearLayoutManager"
+            tools:listitem="@layout/item_tools1" />
     </android.support.constraint.ConstraintLayout>
 </layout>

@@ -1,19 +1,21 @@
 package demo.zxhua.daggerdemo.binding;
 
-import javax.inject.Inject;
+import android.databinding.BindingAdapter;
+import android.graphics.drawable.Drawable;
+import android.widget.ImageView;
 
-import demo.zxhua.daggerdemo.utils.ImageLoaderUtils;
+import com.bumptech.glide.Glide;
 
 /**
  * Created by Zxhua on 2017/11/30 0030.
  */
 
 public class MyBindingAdapter {
-    @Inject
-    public ImageLoaderUtils imageLoaderUtils;
-//
-//    @BindingAdapter("bind:image")
-//    public void imageLoader(ImageView imageView, String url) {
-//        imageLoaderUtils.displayImage(imageView, url);
-//    }
+
+    @SuppressWarnings("uncheck")
+    @BindingAdapter({"app:image", "app:erro"})
+    public static void imageLoader(ImageView imageView, String url, Drawable erro) {
+        Glide.with(imageView.getContext()).load(url).error(erro).into(imageView);
+    }
+
 }

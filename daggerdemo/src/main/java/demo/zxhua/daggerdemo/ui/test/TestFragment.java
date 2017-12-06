@@ -46,5 +46,6 @@ public class TestFragment extends BaseFragment<FragTestBinding, TestViewModel> {
         mViewModel = ViewModelProviders.of(this, viewModelFactory).get(TestViewModel.class);
         fragName = getArguments().getString("name");
         mViewModel.fragName.set(fragName);
+        mBinding.setViewModel(mViewModel);
     }
 }

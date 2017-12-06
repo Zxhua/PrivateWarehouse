@@ -5,25 +5,39 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 
+import java.util.List;
+
 
 public final class ActivityUtilsImpl implements ActivityUtils {
+
+    private void controller(FragmentManager fragmentManager, Fragment fragment, int frameId, String tag) {
+        List<Fragment> fragments = fragmentManager.getFragments();
+        final FragmentTransaction transaction = fragmentManager.beginTransaction();
+        if (fragments.contains(fragment)) {
+            transaction.show(fragment);
+        } else {
+            transaction.add(frameId, fragment, tag);
+        }
+        for (Fragment frag : fragments) {
+            if (!tag.equals(frag.getTag())) {
+                transaction.hide(frag);
+            }
+        }
+        transaction.commitAllowingStateLoss();
+    }
 
     @Override
     public void addFragmentToActivity(@NonNull final FragmentManager fragmentManager, @NonNull final Fragment fragment, final int frameId) {
         if (!fragment.isAdded()) {
             final FragmentTransaction transaction = fragmentManager.beginTransaction();
-            transaction.add(frameId, fragment);
+            transaction.replace(frameId, fragment);
             transaction.commit();
         }
     }
 
     @Override
     public void addFragmentWithTagToActivity(@NonNull final FragmentManager fragmentManager, @NonNull final Fragment fragment, final int frameId, @NonNull final String tag) {
-        if (!fragment.isAdded()) {
-            final FragmentTransaction transaction = fragmentManager.beginTransaction();
-            transaction.add(frameId, fragment, tag);
-            transaction.commit();
-        }
+        controller(fragmentManager, fragment, frameId, tag);
     }
 
     @Override

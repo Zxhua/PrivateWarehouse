@@ -20,6 +20,7 @@ public class BindingAdapter extends RecyclerView.Adapter<BindingAdapter.BindingV
 
     public void setItems(List<BindingAdapterItem> items) {
         this.items = items;
+        notifyDataSetChanged();
     }
 
     @Override

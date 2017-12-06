@@ -1,23 +1,21 @@
 package demo.zxhua.daggerdemo.vo;
 
 import android.databinding.Bindable;
-import android.databinding.Observable;
 import android.databinding.ObservableField;
 
 import demo.zxhua.daggerdemo.R;
-import demo.zxhua.daggerdemo.core.base.BindingAdapterItem;
 
 /**
- * Created by Zxhua on 2017/11/30 0030.
+ * Created by Zxhua on 2017/12/6 0006.
  */
 
-public class ToolsItem  implements BindingAdapterItem ,Observable{
-    private ObservableField<String> toolsName;
-    private ObservableField<String> toolsIconUrl;
+public class ItemTwo extends BaseVO {
+    private ObservableField<String> toolsName = new ObservableField<>();
+    private ObservableField<String> toolsIconUrl = new ObservableField<>();
 
     @Override
     public int getViewType() {
-        return R.layout.item_tools;
+        return R.layout.item_tools2;
     }
 
     @Bindable
@@ -36,15 +34,5 @@ public class ToolsItem  implements BindingAdapterItem ,Observable{
 
     public void setToolsIconUrl(String toolsIconUrl) {
         this.toolsIconUrl.set(toolsIconUrl);
-    }
-
-    @Override
-    public void addOnPropertyChangedCallback(OnPropertyChangedCallback onPropertyChangedCallback) {
-
-    }
-
-    @Override
-    public void removeOnPropertyChangedCallback(OnPropertyChangedCallback onPropertyChangedCallback) {
-
     }
 }

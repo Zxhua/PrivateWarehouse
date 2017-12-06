@@ -13,6 +13,7 @@ import demo.zxhua.daggerdemo.R;
 import demo.zxhua.daggerdemo.core.base.BaseFragment;
 import demo.zxhua.daggerdemo.databinding.FragNavigationBinding;
 import demo.zxhua.daggerdemo.ui.test.TestFragment;
+import demo.zxhua.daggerdemo.ui.tools.ToolsFragment;
 import demo.zxhua.daggerdemo.utils.ActivityUtils;
 
 /**
@@ -23,11 +24,14 @@ public class NavigationFragment extends BaseFragment<FragNavigationBinding, Navi
     @Inject
     public ActivityUtils activityUtils;
 
+    private TestFragment fragment1;
+    private TestFragment fragment2;
+    private ToolsFragment fragment3;
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        initFragment();
 
         mBinding.btmNavigation
                 .addItem(new BottomNavigationItem(R.mipmap.ic_home_white_24dp, "Home").setActiveColorResource(R.color.orange))
@@ -57,6 +61,12 @@ public class NavigationFragment extends BaseFragment<FragNavigationBinding, Navi
 
     }
 
+    private void initFragment() {
+        fragment1 = TestFragment.newTestFragment("Fragment one");
+        fragment2 = TestFragment.newTestFragment("Fragment two");
+        fragment3 = new ToolsFragment();
+    }
+
     @Override
     protected int layoutId() {
         return R.layout.frag_navigation;
@@ -65,15 +75,15 @@ public class NavigationFragment extends BaseFragment<FragNavigationBinding, Navi
     private void setScrollableText(int position) {
         switch (position) {
             case 0:
-                activityUtils.addFragmentToActivity(getChildFragmentManager(), TestFragment.newTestFragment("Fragment one"), R.id.contentFrame);
+                activityUtils.addFragmentWithTagToActivity(getChildFragmentManager(), fragment1, R.id.contentFrame, "one");
                 break;
 
             case 1:
-                activityUtils.addFragmentToActivity(getChildFragmentManager(), TestFragment.newTestFragment("Fragment two"), R.id.contentFrame);
+                activityUtils.addFragmentWithTagToActivity(getChildFragmentManager(), fragment2, R.id.contentFrame, "two");
                 break;
 
             case 2:
-                activityUtils.addFragmentToActivity(getChildFragmentManager(), TestFragment.newTestFragment("Fragment three"), R.id.contentFrame);
+                activityUtils.addFragmentWithTagToActivity(getChildFragmentManager(), fragment3, R.id.contentFrame, "three");
                 break;
         }
     }
