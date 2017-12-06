@@ -8,6 +8,7 @@ import dagger.Module;
 import dagger.multibindings.IntoMap;
 import demo.zxhua.daggerdemo.core.di.module.viewmodelmodule.ViewModelFactory;
 import demo.zxhua.daggerdemo.core.di.module.viewmodelmodule.ViewModelKey;
+import demo.zxhua.daggerdemo.ui.complex.ComplexViewModel;
 import demo.zxhua.daggerdemo.ui.navigation.NavigationViewModel;
 import demo.zxhua.daggerdemo.ui.test.TestViewModel;
 import demo.zxhua.daggerdemo.ui.tools.ToolsViewModel;
@@ -23,17 +24,20 @@ public abstract class VMModule {
     @ViewModelKey(TestViewModel.class)
     abstract ViewModel bindTestViewMode(TestViewModel testViewModel);
 
-
     @Binds
     @IntoMap
     @ViewModelKey(NavigationViewModel.class)
     abstract ViewModel bindNavigationViewModel(NavigationViewModel testViewModel);
 
-
     @Binds
     @IntoMap
     @ViewModelKey(ToolsViewModel.class)
     abstract ViewModel bindToolsViewModel(ToolsViewModel testViewModel);
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(ComplexViewModel.class)
+    abstract ViewModel bindComplexViewModel(ComplexViewModel complexViewModel);
 
     @Binds
     abstract ViewModelProvider.Factory getViewModelFactory(ViewModelFactory factory);

@@ -3,6 +3,7 @@ package demo.zxhua.daggerdemo.core.di.module;
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
 import demo.zxhua.daggerdemo.MainActivity;
+import demo.zxhua.daggerdemo.ui.complex.ComplexFragment;
 import demo.zxhua.daggerdemo.ui.navigation.NavigationFragment;
 import demo.zxhua.daggerdemo.ui.test.TestFragment;
 import demo.zxhua.daggerdemo.ui.tools.ToolsFragment;
@@ -24,4 +25,7 @@ public abstract class BuildersModule {
 
     @ContributesAndroidInjector(modules = {FragmentMoudel.class})
     abstract ToolsFragment providerToolsFragment();
+
+    @ContributesAndroidInjector(modules = {FragmentMoudel.class})
+    abstract ComplexFragment providerComplexFragment();
 }

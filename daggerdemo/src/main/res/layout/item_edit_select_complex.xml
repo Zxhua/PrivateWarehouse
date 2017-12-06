@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="android.widget.TextView" />
+
+        <variable
+            name="item"
+            type="demo.zxhua.daggerdemo.vo.ComplexVO" />
+
+        <variable
+            name="listener"
+            type="demo.zxhua.daggerdemo.ui.complex.ComplexListener" />
+
+        <variable
+            name="viewmodel"
+            type="demo.zxhua.daggerdemo.ui.complex.ComplexViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="center_vertical"
+            android:text="@{item.labelKey}"
+            tools:text="labelKey" />
+
+        <EditText
+            android:id="@+id/labelEdit"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="7"
+            android:gravity="end"
+            android:text="@={item.labelValue}"
+            android:visibility="@{ item.isEdit ? View.VISIBLE : View.GONE}"
+            tools:visibility="gone" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="7"
+            android:drawablePadding="3dp"
+            android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+            android:gravity="center_vertical|end"
+            android:onClick="@{(view)->listener.onSelect((TextView)view,item)}"
+            android:text="@={item.labelValue}"
+            android:visibility="@{ item.isEdit ? View.GONE : View.VISIBLE}"
+            tools:text="labelValue" />
+
+    </LinearLayout>
+</layout>

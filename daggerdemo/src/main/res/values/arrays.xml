@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="edu_name">
+        <item>博士及以上</item>
+        <item>硕士</item>
+        <item>大学本科</item>
+        <item>大学专科\\专科学校</item>
+        <item>高中\\中专\\技校</item>
+        <item>初中</item>
+        <item>初中以下</item>
+    </string-array>
+</resources>

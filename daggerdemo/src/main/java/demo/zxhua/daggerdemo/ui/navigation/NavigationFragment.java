@@ -12,6 +12,7 @@ import javax.inject.Inject;
 import demo.zxhua.daggerdemo.R;
 import demo.zxhua.daggerdemo.core.base.BaseFragment;
 import demo.zxhua.daggerdemo.databinding.FragNavigationBinding;
+import demo.zxhua.daggerdemo.ui.complex.ComplexFragment;
 import demo.zxhua.daggerdemo.ui.test.TestFragment;
 import demo.zxhua.daggerdemo.ui.tools.ToolsFragment;
 import demo.zxhua.daggerdemo.utils.ActivityUtils;
@@ -25,7 +26,7 @@ public class NavigationFragment extends BaseFragment<FragNavigationBinding, Navi
     public ActivityUtils activityUtils;
 
     private TestFragment fragment1;
-    private TestFragment fragment2;
+    private ComplexFragment fragment2;
     private ToolsFragment fragment3;
 
     @Override
@@ -63,7 +64,7 @@ public class NavigationFragment extends BaseFragment<FragNavigationBinding, Navi
 
     private void initFragment() {
         fragment1 = TestFragment.newTestFragment("Fragment one");
-        fragment2 = TestFragment.newTestFragment("Fragment two");
+        fragment2 = new ComplexFragment();
         fragment3 = new ToolsFragment();
     }
 
