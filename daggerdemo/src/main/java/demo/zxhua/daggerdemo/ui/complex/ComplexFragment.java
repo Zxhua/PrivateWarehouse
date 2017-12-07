@@ -6,12 +6,17 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import demo.zxhua.daggerdemo.R;
 import demo.zxhua.daggerdemo.core.base.BaseFragment;
 import demo.zxhua.daggerdemo.core.base.BindingAdapter;
+import demo.zxhua.daggerdemo.core.base.BindingAdapterItem;
 import demo.zxhua.daggerdemo.databinding.FragComplexBinding;
+import demo.zxhua.daggerdemo.utils.DialogUtils;
+import demo.zxhua.daggerdemo.vo.ComplexVO;
 
 /**
  * Created by Zxhua on 2017/12/6 0006.
@@ -31,6 +36,16 @@ public class ComplexFragment extends BaseFragment<FragComplexBinding, ComplexVie
         mViewModel.items.observe(this, complexVOS -> {
             bindingAdapter.setItems(complexVOS);
             mBinding.rlvComplex.setAdapter(bindingAdapter);
+        });
+
+        mBinding.showMessage.setOnClickListener(view1 -> {
+            List<BindingAdapterItem> value = mViewModel.items.getValue();
+            StringBuilder stringBuilder = new StringBuilder();
+            for (BindingAdapterItem bindingAdapterItem : value) {
+                ComplexVO item = (ComplexVO) bindingAdapterItem;
+                stringBuilder.append(item.toString()).append("\n\n");
+            }
+            new DialogUtils().showDetail(getContext(), stringBuilder.toString());
         });
     }
 

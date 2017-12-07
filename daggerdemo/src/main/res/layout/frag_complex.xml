@@ -14,11 +14,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <Button
+            android:id="@+id/showMessage"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toTopOf="parent" />
+
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rlvComplex"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layoutManager="LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@id/showMessage"
             tools:listitem="@layout/item_edit_select_complex" />
     </android.support.constraint.ConstraintLayout>
 </layout>

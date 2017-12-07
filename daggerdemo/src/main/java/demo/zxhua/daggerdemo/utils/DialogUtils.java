@@ -3,6 +3,7 @@ package demo.zxhua.daggerdemo.utils;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
+import android.text.Html;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -17,10 +18,19 @@ import android.widget.TextView;
  */
 
 public class DialogUtils {
-    private  AlertDialog mFilterDialog;
-    private  String[] strings;
+    private AlertDialog mFilterDialog;
+    private String[] strings;
 
-    public  void showFilterDialog(TextView textView,String[] strings) {
+
+    public void showDetail(Context context, String message) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        message = message.replace("FFFFFF", "000000");
+        builder.setMessage(Html.fromHtml(message));
+        builder.setPositiveButton("确定", null);
+        builder.show();
+    }
+
+    public void showFilterDialog(TextView textView, String[] strings) {
         this.strings = strings;
         AlertDialog.Builder builder = new AlertDialog.Builder(textView.getContext());
         builder.setView(initDialogView(textView.getContext(), textView));
@@ -29,7 +39,7 @@ public class DialogUtils {
     }
 
     @NonNull
-    public  View initDialogView(Context context, TextView textView) {
+    public View initDialogView(Context context, TextView textView) {
         //容器
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(LinearLayout.VERTICAL);

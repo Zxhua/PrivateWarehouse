@@ -28,7 +28,7 @@ public class ComplexViewModel extends ViewModel {
         List<BindingAdapterItem> list = new ArrayList<>();
         for (int i = 0; i < 30; i++) {
             ComplexVO complexVO = new ComplexVO();
-            complexVO.labelKey.set("Label Key " + i);
+            complexVO.labelKey.set(""+i);
             if (i % 3 == 0) {
                 complexVO.resource.set(R.array.edu_name);
                 complexVO.isEdit.set(false);

@@ -19,4 +19,9 @@ public class ComplexVO extends BaseVO {
     public int getViewType() {
         return R.layout.item_edit_select_complex;
     }
+
+    @Override
+    public String toString() {
+        return "BaseVO" + ": [labelKey:" + labelKey.get() + ",labelValue:" + labelValue.get() + "]";
+    }
 }

@@ -11,7 +11,7 @@
             type="demo.zxhua.daggerdemo.ui.navigation.NavigationViewModel" />
     </data>
 
-    <android.support.constraint.ConstraintLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -20,16 +20,15 @@
             android:id="@+id/btmNavigation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_alignParentBottom="true"
             />
 
         <FrameLayout
             android:id="@+id/contentFrame"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_constraintBottom_toTopOf="@id/btmNavigation"
+            android:layout_above="@id/btmNavigation"
           />
 
-    </android.support.constraint.ConstraintLayout>
+    </RelativeLayout>
 </layout>
