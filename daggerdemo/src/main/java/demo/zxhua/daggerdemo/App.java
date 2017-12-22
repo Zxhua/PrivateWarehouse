@@ -17,13 +17,11 @@ import demo.zxhua.daggerdemo.core.di.component.DaggerApplicationComponent;
 public class App extends DaggerApplication implements HasActivityInjector {
     @Inject
     DispatchingAndroidInjector<Activity> activityInjector;
-
     @Override
     public void onCreate() {
         DaggerApplicationComponent.create().inject(this);
         super.onCreate();
     }
-
     @Override
     public DispatchingAndroidInjector<Activity> activityInjector() {
         return activityInjector;

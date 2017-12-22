@@ -33,10 +33,8 @@ public class ComplexFragment extends BaseFragment<FragComplexBinding, ComplexVie
         mViewModel = ViewModelProviders.of(this, viewModelFactory).get(ComplexViewModel.class);
         mBinding.setViewmodel(mViewModel);
         BindingAdapter bindingAdapter = new BindingAdapter();
-        mViewModel.items.observe(this, complexVOS -> {
-            bindingAdapter.setItems(complexVOS);
-            mBinding.rlvComplex.setAdapter(bindingAdapter);
-        });
+        mBinding.rlvComplex.setAdapter(bindingAdapter);
+        mViewModel.items.observe(this, bindingAdapter::setItems);
 
         mBinding.showMessage.setOnClickListener(view1 -> {
             List<BindingAdapterItem> value = mViewModel.items.getValue();

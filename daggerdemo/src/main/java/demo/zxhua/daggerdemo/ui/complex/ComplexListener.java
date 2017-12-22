@@ -9,5 +9,5 @@ import demo.zxhua.daggerdemo.vo.ComplexVO;
  */
 
 public interface ComplexListener {
-    public void onSelect(TextView view, ComplexVO item);
+    void onSelect(TextView view, ComplexVO item);
 }

@@ -26,10 +26,8 @@ public class ToolsFragment extends BaseFragment<FragToolBinding, ToolsViewModel>
         mViewModel =  ViewModelProviders.of(this, viewModelFactory).get(ToolsViewModel.class);
         mBinding.setViewmodel(mViewModel);
         BindingAdapter adapter = new BindingAdapter();
-        mViewModel.items.observe(this, bindingAdapterItems -> {
-            adapter.setItems(bindingAdapterItems);
-            mBinding.rlvTools.setAdapter(adapter);
-        });
+        mBinding.rlvTools.setAdapter(adapter);
+        mViewModel.items.observe(this, adapter::setItems);
     }
 
     @Override

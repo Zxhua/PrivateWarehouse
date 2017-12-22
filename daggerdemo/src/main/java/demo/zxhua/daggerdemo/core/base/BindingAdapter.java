@@ -2,6 +2,7 @@ package demo.zxhua.daggerdemo.core.base;
 
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
+import android.support.v4.util.SparseArrayCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -22,6 +23,34 @@ import demo.zxhua.daggerdemo.vo.ComplexVO;
 
 public class BindingAdapter extends RecyclerView.Adapter<BindingAdapter.BindingViewHolder> implements ComplexListener {
     private List<BindingAdapterItem> items = new ArrayList<BindingAdapterItem>();
+
+    private SparseArrayCompat<BindingAdapterItem> mHeaderViews = new SparseArrayCompat<BindingAdapterItem>();
+
+    private SparseArrayCompat<BindingAdapterItem> mFooterViews = new SparseArrayCompat<BindingAdapterItem>();
+
+    public void addHeaderView(BindingAdapterItem headerView) {
+        mHeaderViews.put(mHeaderViews.size(), headerView);
+    }
+
+    public void addFooterView(BindingAdapterItem footView) {
+        mFooterViews.put(mHeaderViews.size() + items.size() + mFooterViews.size(), footView);
+    }
+
+    public int getHeaderViewCount() {
+        return mHeaderViews.size();
+    }
+
+    public int getFooterViewCount() {
+        return mFooterViews.size();
+    }
+
+    public boolean isHeaderViewPos(int position) {
+        return position < getHeaderViewCount() && getHeaderViewCount() > 0;
+    }
+
+    public boolean isFooterViewPos(int position) {
+        return position >= getHeaderViewCount() + items.size() && getFooterViewCount() > 0;
+    }
 
     public void setItems(List<BindingAdapterItem> items) {
         this.items = items;
@@ -53,6 +82,10 @@ public class BindingAdapter extends RecyclerView.Adapter<BindingAdapter.BindingV
 
     @Override
     public int getItemViewType(int position) {
+        if (isHeaderViewPos(position))
+            return mHeaderViews.get(position).getViewType();
+        if (isFooterViewPos(position))
+            return mFooterViews.get(position).getViewType();
         return items.get(position).getViewType();
     }
 

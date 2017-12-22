@@ -4,14 +4,19 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.text.Html;
+import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import demo.zxhua.daggerdemo.ui.listener.AddClassClickListener;
 
 /**
  * Created by Zxhua on 2017/12/6 0006.
@@ -74,4 +79,39 @@ public class DialogUtils {
         linearLayout.addView(button);
         return linearLayout;
     }
+
+    @NonNull
+    private View initDialogView(Context context, AddClassClickListener listener) {
+        //容器
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(LinearLayout.VERTICAL);
+        linearLayout.setGravity(Gravity.CENTER_HORIZONTAL);
+        EditText editText = new EditText(context);
+
+        //按钮
+        Button button = new Button(context);
+        button.setText("确定");
+        button.setOnClickListener(view -> {
+            String claName = editText.getText().toString();
+            if (TextUtils.isEmpty(claName.trim())) {
+                Toast.makeText(context, "输入班级名称", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            if (listener != null) listener.onClickListener(editText.getText().toString());
+
+            mFilterDialog.dismiss();
+        });
+        //添加到容器
+        linearLayout.addView(editText);
+        linearLayout.addView(button);
+        return linearLayout;
+    }
+
+    public void showAddClassDialog(Context context,AddClassClickListener listener){
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setView(initDialogView(context,listener));
+        builder.setCancelable(false);
+        mFilterDialog = builder.show();
+    }
+
 }

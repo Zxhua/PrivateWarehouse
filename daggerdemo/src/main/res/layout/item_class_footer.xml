@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="listener"
+            type="demo.zxhua.daggerdemo.ui.listener.AddItemClickListener" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/addClass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/shape_class_coner"
+        android:onClick="@{()->listener.onClickListener(`classes`)}">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="10dp"
+            android:drawableLeft="@drawable/ic_add_black_24dp"
+            android:gravity="center_vertical"
+            android:padding="5dp"
+            android:text="添加"
+            android:textSize="15dp" />
+    </RelativeLayout>
+</layout>
