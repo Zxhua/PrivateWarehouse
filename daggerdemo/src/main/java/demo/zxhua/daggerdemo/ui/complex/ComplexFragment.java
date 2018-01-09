@@ -2,6 +2,7 @@ package demo.zxhua.daggerdemo.ui.complex;
 
 import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
@@ -15,7 +16,7 @@ import demo.zxhua.daggerdemo.core.base.BaseFragment;
 import demo.zxhua.daggerdemo.core.base.BindingAdapter;
 import demo.zxhua.daggerdemo.core.base.BindingAdapterItem;
 import demo.zxhua.daggerdemo.databinding.FragComplexBinding;
-import demo.zxhua.daggerdemo.utils.DialogUtils;
+import demo.zxhua.daggerdemo.ui.scend.SecendActivity;
 import demo.zxhua.daggerdemo.vo.ComplexVO;
 
 /**
@@ -43,7 +44,8 @@ public class ComplexFragment extends BaseFragment<FragComplexBinding, ComplexVie
                 ComplexVO item = (ComplexVO) bindingAdapterItem;
                 stringBuilder.append(item.toString()).append("\n\n");
             }
-            new DialogUtils().showDetail(getContext(), stringBuilder.toString());
+//            new DialogUtils().showDetail(getContext(), stringBuilder.toString());
+            startActivity(new Intent(getContext(), SecendActivity.class));
         });
     }
 

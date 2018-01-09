@@ -30,13 +30,11 @@ public class TestViewModel extends ViewModel {
     public LiveData<List<BindingAdapterItem>> classes;
 
     public MediatorLiveData<List<StudentEntity>> stus = new MediatorLiveData<List<StudentEntity>>();
-
     @Inject
     public ClassRepository classRepository;
 
     @Inject
     public TestViewModel() {
-        loadClass();
     }
 
     public ObservableField<String> fragName = new ObservableField<String>();
@@ -53,10 +51,11 @@ public class TestViewModel extends ViewModel {
     public void addStu(StudentEntity studentEntity) {
     }
 
-    public void loadClass() {
-        classes = Transformations.map(classRepository.load(), input -> {
+    public LiveData<List<BindingAdapterItem>> loadClass() {
+        return classes = Transformations.map(classRepository.load(), input -> {
             List<BindingAdapterItem> clsItems = new ArrayList<>();
-            clsItems.addAll(input);
+            if (input != null)
+                clsItems.addAll(input.data);
             return clsItems;
         });
     }

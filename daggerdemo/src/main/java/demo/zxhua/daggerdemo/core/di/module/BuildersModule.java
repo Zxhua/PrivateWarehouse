@@ -5,6 +5,9 @@ import dagger.android.ContributesAndroidInjector;
 import demo.zxhua.daggerdemo.MainActivity;
 import demo.zxhua.daggerdemo.ui.complex.ComplexFragment;
 import demo.zxhua.daggerdemo.ui.navigation.NavigationFragment;
+import demo.zxhua.daggerdemo.ui.scend.PitSeatActivity;
+import demo.zxhua.daggerdemo.ui.scend.SecendActivity;
+import demo.zxhua.daggerdemo.ui.test.CustomViewFragment;
 import demo.zxhua.daggerdemo.ui.test.TestFragment;
 import demo.zxhua.daggerdemo.ui.tools.ToolsFragment;
 
@@ -17,6 +20,12 @@ public abstract class BuildersModule {
     @ContributesAndroidInjector(modules = {ActivityMoudel.class})
     abstract MainActivity providerMainActivity();
 
+    @ContributesAndroidInjector(modules = {ActivityMoudel.class})
+    abstract PitSeatActivity providePitSeatActivity();
+
+    @ContributesAndroidInjector(modules = {ActivityMoudel.class})
+    abstract SecendActivity providerSecendActivity();
+
     @ContributesAndroidInjector(modules = {FragmentMoudel.class})
     abstract TestFragment providerTestFragment();
 
@@ -28,4 +37,7 @@ public abstract class BuildersModule {
 
     @ContributesAndroidInjector(modules = {FragmentMoudel.class})
     abstract ComplexFragment providerComplexFragment();
+
+    @ContributesAndroidInjector(modules = {FragmentMoudel.class})
+    abstract CustomViewFragment providerCustomViewFragment();
 }

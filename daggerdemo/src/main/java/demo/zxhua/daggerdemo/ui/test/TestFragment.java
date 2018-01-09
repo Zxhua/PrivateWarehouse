@@ -62,7 +62,7 @@ public class TestFragment extends BaseFragment<FragTestBinding, TestViewModel> i
 
         BindingAdapter classAdapter = new BindingAdapter();
         mBinding.classRecyler.setAdapter(classAdapter);
-        mViewModel.classes.observe(this, classAdapter::setItems);
+//        mViewModel.loadClass().observe(this, classAdapter::setItems);
 
         mViewModel.stus.observe(this, studentEntities -> {
 

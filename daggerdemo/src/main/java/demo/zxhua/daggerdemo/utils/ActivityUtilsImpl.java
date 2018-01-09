@@ -8,7 +8,7 @@ import android.support.v4.app.FragmentTransaction;
 import java.util.List;
 
 
-public final class ActivityUtilsImpl implements ActivityUtils {
+public final class  ActivityUtilsImpl implements ActivityUtils {
 
     private void controller(FragmentManager fragmentManager, Fragment fragment, int frameId, String tag) {
         List<Fragment> fragments = fragmentManager.getFragments();

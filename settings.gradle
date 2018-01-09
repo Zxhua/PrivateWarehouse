@@ -1,1 +1,1 @@
-include ':daggerdemo'
+include ':daggerdemo', ':processingLib', ':aspectjlib'

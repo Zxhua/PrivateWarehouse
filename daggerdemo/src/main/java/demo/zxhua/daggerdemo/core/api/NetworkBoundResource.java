@@ -21,7 +21,7 @@ public abstract class NetworkBoundResource<ResultType, RequestType> {
 
     private MediatorLiveData<Resource<ResultType>> result = new MediatorLiveData<>();
 
-    NetworkBoundResource(AppExecutors appExecutors) {
+    protected NetworkBoundResource(AppExecutors appExecutors) {
         this.appExecutors = appExecutors;
         result.setValue(Resource.loading(null));
         LiveData<ResultType> dbSource = loadFromDb();
@@ -80,5 +80,8 @@ public abstract class NetworkBoundResource<ResultType, RequestType> {
     @MainThread
     protected abstract LiveData<ApiResponse<RequestType>> createCall();
 
+    public LiveData<Resource<ResultType>> asLiveData() {
+        return result;
+    }
 
 }

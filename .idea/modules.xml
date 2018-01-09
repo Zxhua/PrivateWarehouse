@@ -5,7 +5,9 @@
       <module fileurl="file://$PROJECT_DIR$/DemoWarehouse.iml" filepath="$PROJECT_DIR$/DemoWarehouse.iml" />
       <module fileurl="file://D:\gome\zxhua\android-google-architecture\DemoWarehouse\PrivateWarehouse.iml" filepath="D:\gome\zxhua\android-google-architecture\DemoWarehouse\PrivateWarehouse.iml" />
       <module fileurl="file://D:\gome\zxhua\android-google-architecture\DemoWarehouse\app\app.iml" filepath="D:\gome\zxhua\android-google-architecture\DemoWarehouse\app\app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/aspectjlib/aspectjlib.iml" filepath="$PROJECT_DIR$/aspectjlib/aspectjlib.iml" />
       <module fileurl="file://$PROJECT_DIR$/daggerdemo/daggerdemo.iml" filepath="$PROJECT_DIR$/daggerdemo/daggerdemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/processingLib/processingLib.iml" filepath="$PROJECT_DIR$/processingLib/processingLib.iml" />
     </modules>
   </component>
 </project>

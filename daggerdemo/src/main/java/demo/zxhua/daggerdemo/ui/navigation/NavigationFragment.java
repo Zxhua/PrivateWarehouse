@@ -13,6 +13,7 @@ import demo.zxhua.daggerdemo.R;
 import demo.zxhua.daggerdemo.core.base.BaseFragment;
 import demo.zxhua.daggerdemo.databinding.FragNavigationBinding;
 import demo.zxhua.daggerdemo.ui.complex.ComplexFragment;
+import demo.zxhua.daggerdemo.ui.test.CustomViewFragment;
 import demo.zxhua.daggerdemo.ui.test.TestFragment;
 import demo.zxhua.daggerdemo.ui.tools.ToolsFragment;
 import demo.zxhua.daggerdemo.utils.ActivityUtils;
@@ -28,6 +29,7 @@ public class NavigationFragment extends BaseFragment<FragNavigationBinding, Navi
     private TestFragment fragment1;
     private ComplexFragment fragment2;
     private ToolsFragment fragment3;
+    private CustomViewFragment customViewFragment;
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
@@ -63,9 +65,10 @@ public class NavigationFragment extends BaseFragment<FragNavigationBinding, Navi
     }
 
     private void initFragment() {
-        fragment1 = TestFragment.newTestFragment("Fragment one");
+//        fragment1 = TestFragment.newTestFragment("Fragment one");
         fragment2 = new ComplexFragment();
         fragment3 = new ToolsFragment();
+        customViewFragment = new CustomViewFragment();
     }
 
     @Override
@@ -76,7 +79,7 @@ public class NavigationFragment extends BaseFragment<FragNavigationBinding, Navi
     private void setScrollableText(int position) {
         switch (position) {
             case 0:
-                activityUtils.addFragmentWithTagToActivity(getChildFragmentManager(), fragment1, R.id.contentFrame, "one");
+                activityUtils.addFragmentWithTagToActivity(getChildFragmentManager(), customViewFragment, R.id.contentFrame, "one");
                 break;
 
             case 1:

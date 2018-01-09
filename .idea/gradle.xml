@@ -8,7 +8,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/aspectjlib" />
             <option value="$PROJECT_DIR$/daggerdemo" />
+            <option value="$PROJECT_DIR$/processingLib" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

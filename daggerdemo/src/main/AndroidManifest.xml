@@ -18,6 +18,8 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".ui.scend.SecendActivity" />
+        <activity android:name=".ui.scend.PitSeatActivity" />
     </application>
 
 </manifest>

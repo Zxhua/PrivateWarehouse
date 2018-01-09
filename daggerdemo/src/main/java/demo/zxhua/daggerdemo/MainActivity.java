@@ -4,10 +4,12 @@ import android.os.Bundle;
 
 import javax.inject.Inject;
 
+import code.zxhua.processinglib.ann.ActivityMap;
 import demo.zxhua.daggerdemo.core.base.BaseActivity;
 import demo.zxhua.daggerdemo.ui.navigation.NavigationFragment;
 import demo.zxhua.daggerdemo.utils.ActivityUtils;
 
+@ActivityMap(value = "MainActivity")
 public class MainActivity extends BaseActivity {
     @Inject
     public ActivityUtils activityUtils;

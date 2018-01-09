@@ -46,7 +46,7 @@ public class ApplicationModule {
 
     @Provides
     @Singleton
-    public ClassRepository provideClassRepository(){
+    ClassRepository provideClassRepository(){
         return new ClassRepository();
     }
 
